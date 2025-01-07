@@ -1,0 +1,8 @@
+[ 2025-01-07 02:03:18,396 ] 51 root - INFO - Starting the Data Ingestion process
+[ 2025-01-07 02:03:18,396 ] 22 root - INFO - Enter the Data Ingestion method or Component
+[ 2025-01-07 02:03:18,410 ] 25 root - INFO - Read the data as dataframe
+[ 2025-01-07 02:03:18,439 ] 31 root - INFO - Train Test Split Initiated
+[ 2025-01-07 02:03:18,471 ] 38 root - INFO - Ingestion of Data is completed
+[ 2025-01-07 02:03:18,472 ] 54 root - INFO - Data Ingestion Completed Successfully.
+Train Data: data/train.csv
+Test Data: data/test.csv

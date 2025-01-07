@@ -1,0 +1,41 @@
+[ 2025-01-07 02:28:22,139 ] 66 root - INFO - Starting the Data Ingestion process
+[ 2025-01-07 02:28:22,139 ] 24 root - INFO - Entering the Data Ingestion method or Component
+[ 2025-01-07 02:28:22,139 ] 28 root - INFO - Reading data from: notebook/data/Fuel Cell.csv
+[ 2025-01-07 02:28:22,154 ] 30 root - INFO - Successfully read the data into a DataFrame
+[ 2025-01-07 02:28:22,154 ] 34 root - INFO - Creating directory: data
+[ 2025-01-07 02:28:22,154 ] 38 root - INFO - Saving raw data to: data/data.csv
+[ 2025-01-07 02:28:22,182 ] 42 root - INFO - Initiating Train-Test Split
+[ 2025-01-07 02:28:22,185 ] 46 root - INFO - Saving train data to: data/train.csv
+[ 2025-01-07 02:28:22,207 ] 49 root - INFO - Saving test data to: data/test.csv
+[ 2025-01-07 02:28:22,214 ] 52 root - INFO - Data Ingestion process completed successfully
+[ 2025-01-07 02:28:22,215 ] 69 root - INFO - Data Ingestion Completed Successfully.
+Train Data Path: data/train.csv
+Test Data Path: data/test.csv
+[ 2025-01-07 02:28:22,215 ] 94 root - INFO - Reading training data from data/train.csv
+[ 2025-01-07 02:28:22,227 ] 97 root - INFO - Reading testing data from data/test.csv
+[ 2025-01-07 02:28:22,230 ] 100 root - INFO - Preprocessing datetime features in train and test datasets
+[ 2025-01-07 02:28:22,231 ] 32 root - INFO - Converting Datetime column to pandas datetime format
+[ 2025-01-07 02:28:22,275 ] 36 root - INFO - Extracting Date, Month, Year, and Time from Datetime
+[ 2025-01-07 02:28:22,341 ] 49 root - INFO - Dropping original Datetime and Fuel Cell Power columns
+[ 2025-01-07 02:28:22,344 ] 32 root - INFO - Converting Datetime column to pandas datetime format
+[ 2025-01-07 02:28:22,355 ] 36 root - INFO - Extracting Date, Month, Year, and Time from Datetime
+[ 2025-01-07 02:28:22,373 ] 49 root - INFO - Dropping original Datetime and Fuel Cell Power columns
+[ 2025-01-07 02:28:22,375 ] 108 root - INFO - Obtaining preprocessor object
+[ 2025-01-07 02:28:22,375 ] 61 root - INFO - Creating preprocessing pipelines for numerical and categorical features
+[ 2025-01-07 02:28:22,376 ] 118 root - INFO - Applying preprocessing on train and test datasets
+[ 2025-01-07 02:28:22,415 ] 74 root - ERROR - An error occurred during the Data Ingestion process.
+Traceback (most recent call last):
+  File "/Users/abdulrasheed/Desktop/FuelCellPower/source/components/data_transformation.py", line 123, in initiate_data_transformation
+    train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
+  File "/Users/abdulrasheed/Desktop/FuelCellPower/.venv/lib/python3.10/site-packages/numpy/lib/index_tricks.py", line 418, in __getitem__
+    res = self.concatenate(tuple(objs), axis=axis)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 0, the array at index 0 has size 1 and the array at index 1 has size 35037
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/abdulrasheed/Desktop/FuelCellPower/source/components/data_ingestion.py", line 71, in <module>
+    data_transformation.initiate_data_transformation(train_data, test_data)
+  File "/Users/abdulrasheed/Desktop/FuelCellPower/source/components/data_transformation.py", line 136, in initiate_data_transformation
+    raise CustomException(e, sys)
+source.exception.CustomException: <unprintable CustomException object>

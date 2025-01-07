@@ -1,0 +1,13 @@
+[ 2025-01-07 02:06:04,983 ] 64 root - INFO - Starting the Data Ingestion process
+[ 2025-01-07 02:06:04,983 ] 22 root - INFO - Entering the Data Ingestion method or Component
+[ 2025-01-07 02:06:04,983 ] 26 root - INFO - Reading data from: notebook/data/Fuel Cell.csv
+[ 2025-01-07 02:06:04,997 ] 28 root - INFO - Successfully read the data into a DataFrame
+[ 2025-01-07 02:06:04,997 ] 32 root - INFO - Creating directory: data
+[ 2025-01-07 02:06:04,997 ] 36 root - INFO - Saving raw data to: data/data.csv
+[ 2025-01-07 02:06:05,023 ] 40 root - INFO - Initiating Train-Test Split
+[ 2025-01-07 02:06:05,027 ] 44 root - INFO - Saving train data to: data/train.csv
+[ 2025-01-07 02:06:05,049 ] 47 root - INFO - Saving test data to: data/test.csv
+[ 2025-01-07 02:06:05,055 ] 50 root - INFO - Data Ingestion process completed successfully
+[ 2025-01-07 02:06:05,055 ] 67 root - INFO - Data Ingestion Completed Successfully.
+Train Data Path: data/train.csv
+Test Data Path: data/test.csv

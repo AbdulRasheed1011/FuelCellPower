@@ -1,0 +1,41 @@
+[ 2025-01-07 02:44:39,306 ] 69 root - INFO - Starting the Data Ingestion process
+[ 2025-01-07 02:44:39,307 ] 27 root - INFO - Entering the Data Ingestion method or Component
+[ 2025-01-07 02:44:39,307 ] 31 root - INFO - Reading data from: notebook/data/Fuel Cell.csv
+[ 2025-01-07 02:44:39,320 ] 33 root - INFO - Successfully read the data into a DataFrame
+[ 2025-01-07 02:44:39,320 ] 37 root - INFO - Creating directory: artifacts
+[ 2025-01-07 02:44:39,321 ] 41 root - INFO - Saving raw data to: artifacts/data.csv
+[ 2025-01-07 02:44:39,347 ] 45 root - INFO - Initiating Train-Test Split
+[ 2025-01-07 02:44:39,351 ] 49 root - INFO - Saving train artifacts to: artifacts/train.csv
+[ 2025-01-07 02:44:39,373 ] 52 root - INFO - Saving test artifacts to: artifacts/test.csv
+[ 2025-01-07 02:44:39,379 ] 55 root - INFO - Data Ingestion process completed successfully
+[ 2025-01-07 02:44:39,379 ] 72 root - INFO - Data Ingestion Completed Successfully.
+Train Data Path: artifacts/train.csv
+Test Data Path: artifacts/test.csv
+[ 2025-01-07 02:44:39,379 ] 94 root - INFO - Reading training data from artifacts/train.csv
+[ 2025-01-07 02:44:39,388 ] 97 root - INFO - Reading testing data from artifacts/test.csv
+[ 2025-01-07 02:44:39,391 ] 100 root - INFO - Preprocessing datetime features in train and test datasets
+[ 2025-01-07 02:44:39,391 ] 32 root - INFO - Converting Datetime column to pandas datetime format
+[ 2025-01-07 02:44:39,434 ] 36 root - INFO - Extracting Date, Month, Year, and Time from Datetime
+[ 2025-01-07 02:44:39,499 ] 49 root - INFO - Dropping original Datetime and Fuel Cell Power columns
+[ 2025-01-07 02:44:39,500 ] 32 root - INFO - Converting Datetime column to pandas datetime format
+[ 2025-01-07 02:44:39,511 ] 36 root - INFO - Extracting Date, Month, Year, and Time from Datetime
+[ 2025-01-07 02:44:39,528 ] 49 root - INFO - Dropping original Datetime and Fuel Cell Power columns
+[ 2025-01-07 02:44:39,530 ] 108 root - INFO - Obtaining preprocessor object
+[ 2025-01-07 02:44:39,530 ] 61 root - INFO - Creating preprocessing pipelines for numerical and categorical features
+[ 2025-01-07 02:44:39,531 ] 118 root - INFO - Applying preprocessing on train and test datasets
+[ 2025-01-07 02:44:39,574 ] 84 root - ERROR - An error occurred during the Data Ingestion process.
+Traceback (most recent call last):
+  File "/Users/abdulrasheed/Desktop/FuelCellPower/source/components/data_transformation.py", line 123, in initiate_data_transformation
+    train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
+  File "/Users/abdulrasheed/Desktop/FuelCellPower/.venv/lib/python3.10/site-packages/numpy/lib/index_tricks.py", line 418, in __getitem__
+    res = self.concatenate(tuple(objs), axis=axis)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 0, the array at index 0 has size 1 and the array at index 1 has size 35037
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/abdulrasheed/Desktop/FuelCellPower/source/components/data_ingestion.py", line 75, in <module>
+    data_transformation.initiate_data_transformation(train_data, test_data)
+  File "/Users/abdulrasheed/Desktop/FuelCellPower/source/components/data_transformation.py", line 136, in initiate_data_transformation
+    raise CustomException(e, sys)
+source.exception.CustomException: <exception str() failed>
